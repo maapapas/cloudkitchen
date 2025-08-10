@@ -12,11 +12,10 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #2d1b15 0%, #1a0e0a 100%);
-            color: #fff;
-            overflow-x: hidden;
-            position: relative;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff8e7 0%, #ffecd1 100%);
+            color: #2c1810;
+            line-height: 1.6;
         }
 
         /* Food-themed floating elements */
@@ -32,371 +31,504 @@
 
         .floating-element {
             position: absolute;
-            animation: float 8s ease-in-out infinite;
-            opacity: 0.1;
+            animation: float 12s ease-in-out infinite;
+            opacity: 0.08;
         }
 
         .floating-element::before {
             content: '';
             position: absolute;
-            width: 60px;
-            height: 60px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: radial-gradient(circle, #ff6b35, #ffa500);
         }
 
         .floating-element:nth-child(1) {
-            top: 15%;
-            left: 10%;
+            top: 10%;
+            left: 5%;
             animation-delay: 0s;
         }
 
         .floating-element:nth-child(2) {
-            top: 25%;
-            right: 15%;
-            animation-delay: 2s;
+            top: 30%;
+            right: 8%;
+            animation-delay: 3s;
         }
 
         .floating-element:nth-child(3) {
-            bottom: 30%;
-            left: 5%;
-            animation-delay: 4s;
-        }
-
-        .floating-element:nth-child(4) {
-            top: 60%;
-            right: 10%;
+            bottom: 40%;
+            left: 3%;
             animation-delay: 6s;
         }
 
-        /* Steam effect */
-        .steam {
-            position: fixed;
-            width: 3px;
-            height: 60px;
-            background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: steam 3s ease-in-out infinite;
-            opacity: 0.3;
+        .floating-element:nth-child(4) {
+            top: 70%;
+            right: 5%;
+            animation-delay: 9s;
         }
-
-        .steam:nth-child(1) { left: 20%; top: 20%; animation-delay: 0s; }
-        .steam:nth-child(2) { right: 30%; top: 40%; animation-delay: 1s; }
-        .steam:nth-child(3) { left: 70%; top: 60%; animation-delay: 2s; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
-        }
-
-        @keyframes steam {
-            0%, 100% { transform: translateY(0px) scaleY(1); opacity: 0.3; }
-            50% { transform: translateY(-20px) scaleY(1.5); opacity: 0.1; }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         .header {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             position: relative;
             z-index: 2;
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(160, 82, 45, 0.8));
-            backdrop-filter: blur(15px);
-            border-bottom: 3px solid #d2691e;
-        }
-
-        .logo {
-            max-width: 400px;
-            margin: 0 auto 1.5rem;
-            animation: slideDown 1.5s ease-out;
+            background: linear-gradient(135deg, #ff6b35 0%, #ffa500 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
         }
 
         .logo h1 {
-            font-size: 3.5rem;
-            color: #ffd700;
-            text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
-            font-family: 'Georgia', serif;
-            letter-spacing: 2px;
+            font-size: 2.2rem;
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
         }
 
         .logo h2 {
-            color: #fff;
-            margin: 0.5rem 0;
-            font-size: 1.8rem;
+            color: #fff8e7;
+            font-size: 1.3rem;
             font-weight: 300;
+            margin-bottom: 0.5rem;
         }
 
         .logo p {
-            color: #ffa500;
+            color: #fff8e7;
             font-style: italic;
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
+            font-size: 1rem;
+            opacity: 0.9;
         }
 
         .tagline {
-            background: linear-gradient(90deg, #8b4513, #cd853f);
-            padding: 1rem 2rem;
-            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
             display: inline-block;
             margin: 1rem 0;
             font-style: italic;
-            border: 2px solid #d2691e;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            font-size: 0.95rem;
+        }
+
+        .zomato-button {
+            background: linear-gradient(135deg, #e23744 0%, #c62d39 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(226, 55, 68, 0.4);
+            cursor: pointer;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .zomato-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(226, 55, 68, 0.5);
+            background: linear-gradient(135deg, #c62d39 0%, #a8252f 100%);
+        }
+
+        .zomato-button:active {
+            transform: translateY(0px);
         }
 
         .restaurant-info {
-            background: linear-gradient(135deg, rgba(34, 34, 34, 0.9), rgba(51, 51, 51, 0.8));
-            padding: 1.5rem;
-            border-radius: 20px;
-            margin: 1.5rem auto;
-            max-width: 450px;
-            border: 2px solid #d2691e;
-            animation: fadeInUp 2s ease-out;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            background: rgba(255, 255, 255, 0.95);
+            color: #2c1810;
+            padding: 1.2rem;
+            border-radius: 15px;
+            margin: 1.2rem auto;
+            max-width: 300px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
 
         .restaurant-info h2 {
-            color: #ffd700;
-            font-size: 1.6rem;
-            margin-bottom: 0.8rem;
+            color: #ff6b35;
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
         }
 
         .restaurant-info p {
-            margin: 0.4rem 0;
-            font-size: 1.1rem;
-            color: #e6e6e6;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+            color: #4a4a4a;
         }
 
         .phone {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            color: #ffa500;
-            background: rgba(255, 165, 0, 0.1);
+            color: #ff6b35;
+            background: rgba(255, 107, 53, 0.1);
             padding: 0.5rem;
-            border-radius: 10px;
-            margin-top: 0.8rem;
+            border-radius: 8px;
+            margin-top: 0.6rem;
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 1rem;
             position: relative;
             z-index: 2;
         }
 
         .section {
-            margin-bottom: 3.5rem;
-            background: linear-gradient(135deg, rgba(34, 34, 34, 0.9), rgba(51, 51, 51, 0.8));
-            border-radius: 25px;
-            padding: 2.5rem;
-            backdrop-filter: blur(15px);
-            border: 2px solid #8b4513;
-            animation: slideInLeft 1s ease-out;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .section:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
+            margin-bottom: 2rem;
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.1);
         }
 
         .section-title {
-            font-size: 2.4rem;
-            color: #ffd700;
+            font-size: 1.8rem;
+            color: #ff6b35;
             text-align: center;
-            margin-bottom: 2.5rem;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
             position: relative;
-            font-family: 'Georgia', serif;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 120px;
-            height: 4px;
-            background: linear-gradient(90deg, #d2691e, #ffa500, #d2691e);
-            margin: 0.8rem auto;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b35, #ffa500);
+            margin: 0.5rem auto;
             border-radius: 3px;
         }
 
         .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .menu-item {
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(160, 82, 45, 0.1));
-            padding: 2rem;
-            border-radius: 20px;
-            border-left: 5px solid #d2691e;
-            transition: all 0.4s ease;
+            background: linear-gradient(135deg, #fff8e7 0%, #ffecd1 100%);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
+            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(210, 105, 30, 0.3);
-        }
-
-        .menu-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-            transition: left 0.6s;
-        }
-
-        .menu-item:hover::before {
-            left: 100%;
+            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.1);
         }
 
         .menu-item:hover {
-            transform: translateX(12px);
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.3), rgba(160, 82, 45, 0.2));
-            box-shadow: 0 12px 30px rgba(210, 105, 30, 0.4);
-            border-left-color: #ffd700;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.2);
+            border-left-color: #ffa500;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .item-name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 0.8rem;
-            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c1810;
+            flex: 1;
+            min-width: 0;
         }
 
         .item-price {
-            font-size: 1.4rem;
-            color: #ffd700;
+            font-size: 1.2rem;
+            color: #ff6b35;
             font-weight: bold;
-            float: right;
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(255, 107, 53, 0.1);
             padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            border: 1px solid #ffd700;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            white-space: nowrap;
         }
 
         .item-description {
-            font-size: 1rem;
-            color: #d0d0d0;
-            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: #666;
             font-style: italic;
-            clear: both;
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-60px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { transform: translateY(40px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes slideInLeft {
-            from { transform: translateX(-60px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            line-height: 1.4;
         }
 
         .specialty-badge {
-            background: linear-gradient(45deg, #ff6b35, #ffd700);
-            color: #000;
-            padding: 0.4rem 1rem;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            margin-left: 0.8rem;
-            animation: pulse 2.5s infinite;
+            background: linear-gradient(45deg, #ff6b35, #ffa500);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
             font-weight: bold;
-            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+            margin-left: 0.5rem;
+            animation: pulse 3s infinite;
+            white-space: nowrap;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3); }
-            50% { transform: scale(1.08); box-shadow: 0 4px 15px rgba(255, 107, 53, 0.5); }
-            100% { transform: scale(1); box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3); }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .thali-highlight {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.2));
-            border: 3px solid #ffd700;
-            border-left: 6px solid #ffa500;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b3 100%);
+            border: 2px solid #ffa500;
+            border-left: 5px solid #ff6b35;
         }
 
         .breakfast-time {
-            background: linear-gradient(90deg, #8b4513, #cd853f);
-            padding: 1rem 2rem;
-            border-radius: 30px;
+            background: linear-gradient(90deg, #ff6b35, #ffa500);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
             display: inline-block;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-            border: 2px solid #d2691e;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
         }
 
         .chef-special {
             position: relative;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b3 100%);
+            border-left-color: #ffa500;
         }
 
         .chef-special::after {
             content: '👨‍🍳';
             position: absolute;
-            top: -10px;
-            right: -10px;
-            font-size: 2rem;
-            background: #ffd700;
+            top: -5px;
+            right: -5px;
+            font-size: 1.5rem;
+            background: white;
             border-radius: 50%;
-            padding: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            padding: 0.3rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .footer {
             text-align: center;
-            padding: 3rem;
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95), rgba(160, 82, 45, 0.9));
-            margin-top: 3rem;
-            border-top: 3px solid #d2691e;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #ff6b35 0%, #ffa500 100%);
+            color: white;
+            margin-top: 2rem;
         }
 
         .footer h3 {
-            color: #ffd700;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            font-family: 'Georgia', serif;
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
 
         .footer p {
-            color: #e6e6e6;
-            font-size: 1.2rem;
-            margin: 0.8rem 0;
+            color: #fff8e7;
+            font-size: 1rem;
+            margin: 0.5rem 0;
         }
 
         .delivery-info {
-            background: rgba(255, 215, 0, 0.1);
-            padding: 1rem 2rem;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 15px;
             display: inline-block;
             margin-top: 1rem;
-            border: 2px solid #ffd700;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
+        /* Mobile optimizations */
         @media (max-width: 768px) {
-            .menu-grid {
-                grid-template-columns: 1fr;
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .logo h2 {
+                font-size: 1.2rem;
             }
             
             .section {
-                padding: 2rem 1.5rem;
+                margin-bottom: 1.5rem;
+                padding: 1.2rem;
+                border-radius: 12px;
             }
             
             .section-title {
-                font-size: 2rem;
+                font-size: 1.5rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .menu-item {
+                padding: 1rem;
+            }
+
+            .menu-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-name {
+                font-size: 1rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .item-price {
+                font-size: 1.1rem;
+                align-self: flex-end;
+            }
+
+            .specialty-badge {
+                margin-left: 0;
+                margin-top: 0.3rem;
+                align-self: flex-start;
+            }
+
+            .restaurant-info {
+                max-width: 280px;
+                padding: 1rem;
+            }
+
+            .tagline {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .zomato-button {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+                min-width: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1.5rem 0.8rem;
+            }
+
+            .container {
+                padding: 0.8rem;
             }
 
             .logo h1 {
-                font-size: 2.8rem;
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .menu-item {
+                padding: 0.9rem;
+            }
+
+            .item-name {
+                font-size: 0.95rem;
+            }
+
+            .item-price {
+                font-size: 1rem;
+                padding: 0.25rem 0.6rem;
+            }
+
+            .item-description {
+                font-size: 0.85rem;
+            }
+
+            .specialty-badge {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.5rem;
+            }
+
+            .breakfast-time {
+                font-size: 0.8rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .footer {
+                padding: 1.5rem 0.8rem;
+            }
+
+            .footer h3 {
+                font-size: 1.3rem;
+            }
+
+            .delivery-info {
+                padding: 0.8rem;
+            }
+
+            .zomato-button {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.2rem;
+                min-width: 160px;
+            }
+        }
+
+        /* Improved touch targets for mobile */
+        .menu-item {
+            min-height: 44px;
+            cursor: pointer;
+        }
+
+        .phone {
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Better readability */
+        .item-description {
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .section {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
             }
         }
     </style>
@@ -407,9 +539,6 @@
         <div class="floating-element"></div>
         <div class="floating-element"></div>
         <div class="floating-element"></div>
-        <div class="steam"></div>
-        <div class="steam"></div>
-        <div class="steam"></div>
     </div>
 
     <div class="header">
@@ -421,6 +550,10 @@
         <div class="tagline">
             "Made with Love, Delivered with Care" 🍽️
         </div>
+        
+        <a href="https://zomato.onelink.me/xqzv/kruvggwg" target="_blank" class="zomato-button">
+            🛵 Order on Zomato
+        </a>
         <div class="restaurant-info">
             <h2>📍 Our Kitchen Location</h2>
             <p>SEC 2B 730/1</p>
@@ -436,33 +569,45 @@
             <h2 class="section-title">🍛 AROMATIC RICE & BIRYANI</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="item-name">Fragrant Jeera Rice</div>
-                    <div class="item-price">₹120</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Fragrant Jeera Rice</div>
+                        <div class="item-price">₹120</div>
+                    </div>
                     <div class="item-description">Basmati rice tempered with cumin and aromatic spices</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Jeera Pyaz Ka Pulao</div>
-                    <div class="item-price">₹160</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Jeera Pyaz Ka Pulao</div>
+                        <div class="item-price">₹160</div>
+                    </div>
                     <div class="item-description">Delicately spiced rice with caramelized onions</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Garden Fresh Matar Pulao</div>
-                    <div class="item-price">₹160</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Garden Fresh Matar Pulao</div>
+                        <div class="item-price">₹160</div>
+                    </div>
                     <div class="item-description">Aromatic rice with tender green peas</div>
                 </div>
                 <div class="menu-item chef-special">
-                    <div class="item-name">Vegetable Biryani <span class="specialty-badge">Chef's Special</span></div>
-                    <div class="item-price">₹280</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Vegetable Biryani <span class="specialty-badge">Chef's Special</span></div>
+                        <div class="item-price">₹280</div>
+                    </div>
                     <div class="item-description">Layered rice with mixed vegetables, served with cooling raita</div>
                 </div>
                 <div class="menu-item chef-special">
-                    <div class="item-name">Hyderabadi Chicken Biryani <span class="specialty-badge">Signature</span></div>
-                    <div class="item-price">₹380</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Hyderabadi Chicken Biryani <span class="specialty-badge">Signature</span></div>
+                        <div class="item-price">₹380</div>
+                    </div>
                     <div class="item-description">Traditional dum-cooked biryani with tender chicken pieces and raita (2 pcs)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Mixed Vegetable Pulao</div>
-                    <div class="item-price">₹160</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Mixed Vegetable Pulao</div>
+                        <div class="item-price">₹160</div>
+                    </div>
                     <div class="item-description">Colorful medley of vegetables with fragrant rice</div>
                 </div>
             </div>
@@ -473,48 +618,66 @@
             <h2 class="section-title">🥘 VEGETARIAN DELICACIES</h2>
             <div class="menu-grid">
                 <div class="menu-item chef-special">
-                    <div class="item-name">Paneer Lababdar <span class="specialty-badge">House Special</span></div>
-                    <div class="item-price">₹230</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Paneer Lababdar <span class="specialty-badge">House Special</span></div>
+                        <div class="item-price">₹230</div>
+                    </div>
                     <div class="item-description">Rich and creamy paneer in aromatic tomato-cashew gravy</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Paneer Tikka Butter Masala</div>
-                    <div class="item-price">₹240</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Paneer Tikka Butter Masala</div>
+                        <div class="item-price">₹240</div>
+                    </div>
                     <div class="item-description">Grilled paneer in velvety butter tomato sauce</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Classic Matar Paneer</div>
-                    <div class="item-price">₹200</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Classic Matar Paneer</div>
+                        <div class="item-price">₹200</div>
+                    </div>
                     <div class="item-description">Cottage cheese and peas in traditional spiced gravy</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Kadhai Paneer</div>
-                    <div class="item-price">₹230</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Kadhai Paneer</div>
+                        <div class="item-price">₹230</div>
+                    </div>
                     <div class="item-description">Wok-tossed paneer with bell peppers and onions</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Seasonal Mix Vegetable</div>
-                    <div class="item-price">₹200</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Seasonal Mix Vegetable</div>
+                        <div class="item-price">₹200</div>
+                    </div>
                     <div class="item-description">Fresh garden vegetables in homestyle curry</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Paneer Bhurji</div>
-                    <div class="item-price">₹220</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Paneer Bhurji</div>
+                        <div class="item-price">₹220</div>
+                    </div>
                     <div class="item-description">Scrambled cottage cheese with onions and spices</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Soya Chaap Masala</div>
-                    <div class="item-price">₹220</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Soya Chaap Masala</div>
+                        <div class="item-price">₹220</div>
+                    </div>
                     <div class="item-description">Protein-rich soya in spiced curry sauce</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Paneer Do Payaza</div>
-                    <div class="item-price">₹230</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Paneer Do Payaza</div>
+                        <div class="item-price">₹230</div>
+                    </div>
                     <div class="item-description">Paneer cooked with double onions in rich gravy</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Sahi Matar Mushroom Masala</div>
-                    <div class="item-price">₹230</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Sahi Matar Mushroom Masala</div>
+                        <div class="item-price">₹230</div>
+                    </div>
                     <div class="item-description">Royal style peas and mushroom curry</div>
                 </div>
             </div>
@@ -525,33 +688,45 @@
             <h2 class="section-title">🍗 NON-VEGETARIAN SPECIALTIES</h2>
             <div class="menu-grid">
                 <div class="menu-item chef-special">
-                    <div class="item-name">Butter Chicken <span class="specialty-badge">Most Popular</span></div>
-                    <div class="item-price">₹340</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Butter Chicken <span class="specialty-badge">Most Popular</span></div>
+                        <div class="item-price">₹340</div>
+                    </div>
                     <div class="item-description">Tender chicken in creamy tomato butter sauce (4 pieces with bone)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Tawa Chicken</div>
-                    <div class="item-price">₹340</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Tawa Chicken</div>
+                        <div class="item-price">₹340</div>
+                    </div>
                     <div class="item-description">Griddle-cooked chicken with aromatic spices (4 pieces with bone)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Home-Style Chicken Curry</div>
-                    <div class="item-price">₹340</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Home-Style Chicken Curry</div>
+                        <div class="item-price">₹340</div>
+                    </div>
                     <div class="item-description">Traditional chicken curry like mom's cooking (4 pieces with bone)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Kadhai Chicken</div>
-                    <div class="item-price">₹360</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Kadhai Chicken</div>
+                        <div class="item-price">₹360</div>
+                    </div>
                     <div class="item-description">Wok-fried chicken with bell peppers and onions (4 pieces with bone)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Spiced Egg Masala Curry</div>
-                    <div class="item-price">₹160</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Spiced Egg Masala Curry</div>
+                        <div class="item-price">₹160</div>
+                    </div>
                     <div class="item-description">Hard-boiled eggs in rich spiced gravy (2 eggs)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Murg Awadhi Korma</div>
-                    <div class="item-price">₹360</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Murg Awadhi Korma</div>
+                        <div class="item-price">₹360</div>
+                    </div>
                     <div class="item-description">Royal-style chicken in creamy cashew gravy (4 pieces with bone)</div>
                 </div>
             </div>
@@ -562,23 +737,31 @@
             <h2 class="section-title">🍞 FRESHLY MADE BREADS</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="item-name">Flaky Laccha Paratha</div>
-                    <div class="item-price">₹45</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Flaky Laccha Paratha</div>
+                        <div class="item-price">₹45</div>
+                    </div>
                     <div class="item-description">Multi-layered crispy bread (1 piece)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Tawa Roti</div>
-                    <div class="item-price">₹12</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Tawa Roti</div>
+                        <div class="item-price">₹12</div>
+                    </div>
                     <div class="item-description">Soft whole wheat flatbread (1 piece)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Tawa Butter Roti</div>
-                    <div class="item-price">₹15</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Tawa Butter Roti</div>
+                        <div class="item-price">₹15</div>
+                    </div>
                     <div class="item-description">Buttered whole wheat roti (1 piece)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Plain Tawa Paratha</div>
-                    <div class="item-price">₹30</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Plain Tawa Paratha</div>
+                        <div class="item-price">₹30</div>
+                    </div>
                     <div class="item-description">Golden crispy flatbread (1 piece)</div>
                 </div>
             </div>
@@ -590,28 +773,38 @@
             <div class="breakfast-time">⏰ Available: 9:00 AM - 11:00 AM Daily</div>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="item-name">Authentic Indori Poha</div>
-                    <div class="item-price">₹70</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Authentic Indori Poha</div>
+                        <div class="item-price">₹70</div>
+                    </div>
                     <div class="item-description">Flattened rice with onions, peas and traditional spices (200 gm)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Stuffed Aloo Paratha</div>
-                    <div class="item-price">₹45</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Stuffed Aloo Paratha</div>
+                        <div class="item-price">₹45</div>
+                    </div>
                     <div class="item-description">Potato-stuffed bread with pickle & sauce (1 piece)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Poori Bhaji Combo</div>
-                    <div class="item-price">₹70</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Poori Bhaji Combo</div>
+                        <div class="item-price">₹70</div>
+                    </div>
                     <div class="item-description">Crispy pooris with spiced potato curry and chana (5 pieces)</div>
                 </div>
                 <div class="menu-item chef-special">
-                    <div class="item-name">Mumbai Special Pao Bhaji <span class="specialty-badge">Street Style</span></div>
-                    <div class="item-price">₹99</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Mumbai Special Pao Bhaji <span class="specialty-badge">Street Style</span></div>
+                        <div class="item-price">₹99</div>
+                    </div>
                     <div class="item-description">Spiced vegetable curry with buttered pao (2 pieces)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Hearty Bread Omelette</div>
-                    <div class="item-price">₹99</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Hearty Bread Omelette</div>
+                        <div class="item-price">₹99</div>
+                    </div>
                     <div class="item-description">Fluffy omelette sandwich with crispy potato wedges (2 pieces)</div>
                 </div>
             </div>
@@ -622,23 +815,31 @@
             <h2 class="section-title">🌯 WRAPS & ROLLS</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="item-name">Paneer Tikka Roll</div>
-                    <div class="item-price">₹150</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Paneer Tikka Roll</div>
+                        <div class="item-price">₹150</div>
+                    </div>
                     <div class="item-description">Grilled paneer with fresh veggies in soft roti</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Veg. Malai Chaap Roll</div>
-                    <div class="item-price">₹150</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Veg. Malai Chaap Roll</div>
+                        <div class="item-price">₹150</div>
+                    </div>
                     <div class="item-description">Creamy soya chaap with crunchy salad</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Chicken Tikka Roll</div>
-                    <div class="item-price">₹175</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Chicken Tikka Roll</div>
+                        <div class="item-price">₹175</div>
+                    </div>
                     <div class="item-description">Tender chicken tikka with tangy chutney</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Classic Egg Roll</div>
-                    <div class="item-price">₹99</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Classic Egg Roll</div>
+                        <div class="item-price">₹99</div>
+                    </div>
                     <div class="item-description">Spiced scrambled eggs with fresh vegetables</div>
                 </div>
             </div>
@@ -649,18 +850,24 @@
             <h2 class="section-title">🍔 GOURMET BURGERS</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="item-name">Classic Aloo Tikki Burger</div>
-                    <div class="item-price">₹60</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Classic Aloo Tikki Burger</div>
+                        <div class="item-price">₹60</div>
+                    </div>
                     <div class="item-description">Crispy potato patty with fresh salad and potato wedges</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Tangy Veg Burger</div>
-                    <div class="item-price">₹75</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Tangy Veg Burger</div>
+                        <div class="item-price">₹75</div>
+                    </div>
                     <div class="item-description">Zesty vegetable patty with tangy sauces and wedges</div>
                 </div>
                 <div class="menu-item chef-special">
-                    <div class="item-name">Cloud Special Burger <span class="specialty-badge">Chef's Pride</span></div>
-                    <div class="item-price">₹120</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Cloud Special Burger <span class="specialty-badge">Chef's Pride</span></div>
+                        <div class="item-price">₹120</div>
+                    </div>
                     <div class="item-description">Our signature creation with secret sauce and potato wedges</div>
                 </div>
             </div>
@@ -671,23 +878,31 @@
             <h2 class="section-title">🥪 ARTISAN SANDWICHES</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="item-name">Fresh Veg Sandwich</div>
-                    <div class="item-price">₹99</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Fresh Veg Sandwich</div>
+                        <div class="item-price">₹99</div>
+                    </div>
                     <div class="item-description">Garden vegetables with mayo and mint chutney, served with wedges</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Grilled Veg Sandwich</div>
-                    <div class="item-price">₹140</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Grilled Veg Sandwich</div>
+                        <div class="item-price">₹140</div>
+                    </div>
                     <div class="item-description">Toasted to perfection with melted cheese and potato wedges</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Mumbai Street Sandwich</div>
-                    <div class="item-price">₹120</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Mumbai Street Sandwich</div>
+                        <div class="item-price">₹120</div>
+                    </div>
                     <div class="item-description">Bombay-style with chutneys and spices, served with wedges</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Non-Veg Grilled Sandwich</div>
-                    <div class="item-price">₹175</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Non-Veg Grilled Sandwich</div>
+                        <div class="item-price">₹175</div>
+                    </div>
                     <div class="item-description">Chicken filling with cheese and vegetables, served with wedges</div>
                 </div>
             </div>
@@ -698,48 +913,66 @@
             <h2 class="section-title">🍢 APPETIZERS & STARTERS</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="item-name">Amritsari Soya Chaap</div>
-                    <div class="item-price">₹120</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Amritsari Soya Chaap</div>
+                        <div class="item-price">₹120</div>
+                    </div>
                     <div class="item-description">Crispy golden chaap with traditional Punjabi spices (8 pieces)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Paneer Chilli Dry</div>
-                    <div class="item-price">₹240</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Paneer Chilli Dry</div>
+                        <div class="item-price">₹240</div>
+                    </div>
                     <div class="item-description">Indo-Chinese style paneer with bell peppers (8 pieces)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Crispy Veg Spring Roll</div>
-                    <div class="item-price">₹150</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Crispy Veg Spring Roll</div>
+                        <div class="item-price">₹150</div>
+                    </div>
                     <div class="item-description">Crunchy rolls filled with fresh vegetables (8 pieces)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Hara Bhara Kabab</div>
-                    <div class="item-price">₹150</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Hara Bhara Kabab</div>
+                        <div class="item-price">₹150</div>
+                    </div>
                     <div class="item-description">Green vegetable patties with mint and spinach (8 pieces)</div>
                 </div>
                 <div class="menu-item chef-special">
-                    <div class="item-name">Delhi6 Paneer Tikka <span class="specialty-badge">Signature</span></div>
-                    <div class="item-price">₹260</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Delhi6 Paneer Tikka <span class="specialty-badge">Signature</span></div>
+                        <div class="item-price">₹260</div>
+                    </div>
                     <div class="item-description">Tandoor-style marinated paneer with our special spice blend (8 pieces)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Honey Chilli Potato</div>
-                    <div class="item-price">₹220</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Honey Chilli Potato</div>
+                        <div class="item-price">₹220</div>
+                    </div>
                     <div class="item-description">Sweet and spicy crispy potato fingers (250 gm)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Crispy Fried Chicken Wings</div>
-                    <div class="item-price">₹220</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Crispy Fried Chicken Wings</div>
+                        <div class="item-price">₹220</div>
+                    </div>
                     <div class="item-description">Juicy wings with aromatic herbs and spices (8 pieces)</div>
                 </div>
                 <div class="menu-item chef-special">
-                    <div class="item-name">Delhi6 Chicken Tikka <span class="specialty-badge">Signature</span></div>
-                    <div class="item-price">₹250</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Delhi6 Chicken Tikka <span class="specialty-badge">Signature</span></div>
+                        <div class="item-price">₹250</div>
+                    </div>
                     <div class="item-description">Perfectly marinated chicken with traditional tandoor flavors (8 pieces)</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Hot Garlic Chicken Chilli</div>
-                    <div class="item-price">₹250</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Hot Garlic Chicken Chilli</div>
+                        <div class="item-price">₹250</div>
+                    </div>
                     <div class="item-description">Fiery chicken with garlic and green chilies (8 pieces)</div>
                 </div>
             </div>
@@ -750,48 +983,66 @@
             <h2 class="section-title">🍕 WOOD-FIRED STYLE PIZZA (8")</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <div class="item-name">Classic Margherita Base</div>
-                    <div class="item-price">₹69</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Classic Margherita Base</div>
+                        <div class="item-price">₹69</div>
+                    </div>
                     <div class="item-description">Simple tomato sauce and herb base</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Double Loaded Cheese Pizza</div>
-                    <div class="item-price">₹160</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Double Loaded Cheese Pizza</div>
+                        <div class="item-price">₹160</div>
+                    </div>
                     <div class="item-description">Extra mozzarella and cheddar for cheese lovers</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Fresh Margarita Pizza</div>
-                    <div class="item-price">₹140</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Fresh Margarita Pizza</div>
+                        <div class="item-price">₹140</div>
+                    </div>
                     <div class="item-description">Classic tomato, mozzarella and fresh basil</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Garden Veggie Pizza</div>
-                    <div class="item-price">₹180</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Garden Veggie Pizza</div>
+                        <div class="item-price">₹180</div>
+                    </div>
                     <div class="item-description">Bell peppers, onions, tomatoes and corn</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Delicious Supreme Pizza</div>
-                    <div class="item-price">₹180</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Delicious Supreme Pizza</div>
+                        <div class="item-price">₹180</div>
+                    </div>
                     <div class="item-description">Loaded with premium vegetables and cheese</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Classic Paneer Pizza</div>
-                    <div class="item-price">₹120</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Classic Paneer Pizza</div>
+                        <div class="item-price">₹120</div>
+                    </div>
                     <div class="item-description">Cottage cheese with onions and peppers</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Chicken Delight Pizza</div>
-                    <div class="item-price">₹240</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Chicken Delight Pizza</div>
+                        <div class="item-price">₹240</div>
+                    </div>
                     <div class="item-description">Tender chicken chunks with vegetables</div>
                 </div>
                 <div class="menu-item">
-                    <div class="item-name">Paneer Makhani Pizza</div>
-                    <div class="item-price">₹240</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Paneer Makhani Pizza</div>
+                        <div class="item-price">₹240</div>
+                    </div>
                     <div class="item-description">Fusion pizza with butter masala flavored paneer</div>
                 </div>
                 <div class="menu-item chef-special">
-                    <div class="item-name">Four Cheese Veggie <span class="specialty-badge">Premium</span></div>
-                    <div class="item-price">₹240</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Four Cheese Veggie <span class="specialty-badge">Premium</span></div>
+                        <div class="item-price">₹240</div>
+                    </div>
                     <div class="item-description">Mozzarella, cheddar, parmesan, and processed cheese with vegetables</div>
                 </div>
             </div>
@@ -802,13 +1053,17 @@
             <h2 class="section-title">🍱 COMPLETE MEAL THALIS</h2>
             <div class="menu-grid">
                 <div class="menu-item thali-highlight">
-                    <div class="item-name">Executive Veg Thali <span class="specialty-badge">Best Value</span></div>
-                    <div class="item-price">₹99</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Executive Veg Thali <span class="specialty-badge">Best Value</span></div>
+                        <div class="item-price">₹99</div>
+                    </div>
                     <div class="item-description">Complete meal: 2 Tawa Roti, Dal, Chole/Rajmah, Seasonal Vegetable, Steamed Rice, Fresh Raita, Homemade Pickle</div>
                 </div>
                 <div class="menu-item thali-highlight">
-                    <div class="item-name">Premium Veg Thali <span class="specialty-badge">Complete Feast</span></div>
-                    <div class="item-price">₹160</div>
+                    <div class="menu-item-header">
+                        <div class="item-name">Premium Veg Thali <span class="specialty-badge">Complete Feast</span></div>
+                        <div class="item-price">₹160</div>
+                    </div>
                     <div class="item-description">Royal spread: 2 Tawa Butter Roti, Fragrant Rice, Dal, Matar Paneer, Seasonal Vegetable, Cooling Raita, Roasted Papad, Homemade Pickle</div>
                 </div>
             </div>
@@ -822,7 +1077,7 @@
             <p>🚚 Fast & Safe Delivery | 🏠 Made Fresh in Our Kitchen</p>
             <p>⏰ Open Daily | 💝 Homemade Taste, Made with Love</p>
         </div>
-        <p style="margin-top: 1.5rem; font-style: italic; color: #d2691e;">
+        <p style="margin-top: 1.5rem; font-style: italic; color: #fff8e7;">
             "From Our Kitchen to Your Heart - Every Dish Tells a Story of Love"
         </p>
     </div>
